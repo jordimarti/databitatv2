@@ -262,6 +262,7 @@ DEPENDENCIES
   sidekiq (~> 6.1, >= 6.1.2)
   spring
   tailwindcss-rails (~> 0.3.3)
+  tzinfo-data
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
