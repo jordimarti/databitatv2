@@ -7,5 +7,6 @@ class CreateEnts < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+    execute "ALTER SEQUENCE ents_id_seq START with 12068 RESTART;"
   end
 end
