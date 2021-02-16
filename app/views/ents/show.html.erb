@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ent.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @ent.category %>
+</p>
+
+<p>
+  <strong>Reviewid:</strong>
+  <%= @ent.reviewid %>
+</p>
+
+<%= link_to 'Edit', edit_ent_path(@ent) %> |
+<%= link_to 'Back', ents_path %>

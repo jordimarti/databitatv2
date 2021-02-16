@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .cropped {
+  max-width: 1168px; /* width of container */
+  max-height: 421px; /* height of container */
+  overflow: hidden;
+}
+
+.cropped img {
+  margin: 100px 0px 0px -100px;
+  transform: scale(2);
+}

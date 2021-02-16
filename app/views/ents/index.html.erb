@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Reviewid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ents.each do |ent| %>
+      <tr>
+        <td><%= ent.name %></td>
+        <td><%= ent.category %></td>
+        <td><%= ent.reviewid %></td>
+        <td><%= link_to 'Show', ent %></td>
+        <td><%= link_to 'Edit', edit_ent_path(ent) %></td>
+        <td><%= link_to 'Destroy', ent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ent', new_ent_path %>
