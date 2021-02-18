@@ -71,6 +71,11 @@ class EntsController < ApplicationController
     dades = resposta.to_hash
     @image_url = dades['url']['url']['original']
     @image_date = dades['url']['date']
+    resposta2 = HTTParty.get("https://my.tikee.io/v2/photo_sets/02a65610-6e86-4917-acd1-084415428d92/last_signed_url", headers: { 
+      "Accept" => "application/json" })
+    dades2 = resposta2.to_hash
+    @image2_url = dades2['url']['url']['original']
+    @image2_date = dades2['url']['date']
   end
 
   private

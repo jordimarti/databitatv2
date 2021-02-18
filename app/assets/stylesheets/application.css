@@ -25,3 +25,25 @@
   margin: 100px 0px 0px -100px;
   transform: scale(2);
 }
+
+.cropped2 {
+  max-width: 1168px; /* width of container */
+  max-height: 421px; /* height of container */
+  overflow: hidden;
+}
+
+.cropped2 img {
+  margin: 100px 0px 0px 400px;
+  transform: scale(2);
+}
+
+.cropped3 {
+  max-width: 1168px; /* width of container */
+  max-height: 421px; /* height of container */
+  overflow: hidden;
+}
+
+.cropped3 img {
+  margin: 100px 0px 0px -400px;
+  transform: scale(2);
+}
