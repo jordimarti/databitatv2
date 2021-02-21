@@ -3,6 +3,7 @@
 
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
+import Lightbox from "stimulus-lightbox"
 
 const application = Application.start()
 const context = require.context("controllers", true, /_controller\.js$/)
@@ -15,3 +16,5 @@ application.register('tabs', Tabs)
 application.register('popover', Popover)
 application.register('toggle', Toggle)
 application.register('slideover', Slideover)
+
+application.register("lightbox", Lightbox)

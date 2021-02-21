@@ -67,16 +67,16 @@
         <div class="divide-y divide-gray-200 lg:grid lg:grid-cols-12 lg:divide-y-0 lg:divide-x">
           <aside class="py-6 lg:col-span-3">
             <nav>
-              <%= link_to ents_photos_path(id: @ent.id, reviewid: @ent.reviewid), class: "bg-teal-50 border-teal-500 text-teal-700 hover:bg-teal-50 hover:text-teal-700 group border-l-4 px-3 py-2 flex items-center text-sm font-medium" do %>
-                <svg class="text-teal-500 group-hover:text-teal-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <%= link_to ents_photos_path(id: @ent.id, reviewid: @ent.reviewid), class: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900 group mt-1 border-l-4 px-3 py-2 flex items-center text-sm font-medium" do %>
+                <svg class="text-gray-400 group-hover:text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 Photos
               <% end %>
 
-              <%= link_to ents_timelapses_path(id: @ent.id, reviewid: @ent.reviewid), class: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900 group mt-1 border-l-4 px-3 py-2 flex items-center text-sm font-medium" do %>
-                <svg class="text-gray-400 group-hover:text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <%= link_to ents_timelapses_path(id: @ent.id, reviewid: @ent.reviewid), class: "bg-teal-50 border-teal-500 text-teal-700 hover:bg-teal-50 hover:text-teal-700 group border-l-4 px-3 py-2 flex items-center text-sm font-medium" do %>
+                <svg class="text-teal-500 group-hover:text-teal-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
                 Timelapses
@@ -92,25 +92,7 @@
           </aside>
 
           <div class="divide-y divide-gray-200 lg:col-span-9 p-4">
-            <h3>Point of view 1</h3>
-            <%= @image_date %> 
-            <div class="cropped">
-              <img src="<%= @image_url %>"">
-            </div>
-
-            <br/>
-            <h3>Point of view 2</h3>
-            <%= @image2_date %> 
-            <div class="cropped2">
-              <img src="<%= @image2_url %>">
-            </div>
-
-            <br/>
-            <h3>Point of view 3</h3>
-            <%= @image2_date %> 
-            <div class="cropped3">
-              <img src="<%= @image2_url %>">
-            </div>
+            
           </div>
 
         </div>
@@ -118,4 +100,3 @@
     </div>
   </main>
 </div>
-

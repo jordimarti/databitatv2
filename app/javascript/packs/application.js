@@ -14,3 +14,5 @@ ActiveStorage.start()
 import "stylesheets/application"
 
 import "controllers"
+
+import "lightgallery.js/dist/css/lightgallery.min.css"

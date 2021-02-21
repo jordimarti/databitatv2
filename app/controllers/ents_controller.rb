@@ -1,6 +1,6 @@
 class EntsController < ApplicationController
-  before_action :set_ent, only: %i[ show edit update destroy photos ]
-  before_action :authenticate_user!, except: %i[photos]
+  before_action :set_ent, only: %i[show edit update destroy photos timelapses coverage]
+  before_action :authenticate_user!, except: %i[photos timelapses coverage]
 
   # GET /ents or /ents.json
   def index
@@ -58,14 +58,8 @@ class EntsController < ApplicationController
   end
 
   def photos
-    if user_signed_in?
-
-    else
-      if @ent.reviewid == params[:reviewid]
-      else
-        redirect_to home_index_path
-      end
-    end
+    check_review(@ent.reviewid)
+    
     resposta = HTTParty.get("https://my.tikee.io/v2/photo_sets/b5c0711e-b6f1-4d91-aa2d-55db20b47eec/last_signed_url", headers: { 
       "Accept" => "application/json" })
     dades = resposta.to_hash
@@ -76,6 +70,25 @@ class EntsController < ApplicationController
     dades2 = resposta2.to_hash
     @image2_url = dades2['url']['url']['original']
     @image2_date = dades2['url']['date']
+  end
+
+  def timelapses
+    check_review(@ent.reviewid)
+  end
+
+  def coverage
+    check_review(@ent.reviewid)
+  end
+
+  def check_review(reviewid)
+    if user_signed_in?
+
+    else
+      if reviewid == params[:reviewid]
+      else
+        redirect_to home_index_path
+      end
+    end
   end
 
   private
