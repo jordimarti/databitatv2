@@ -23,7 +23,7 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -63,3 +63,5 @@ gem 'pundit', '~> 2.1'
 gem 'httparty', '~> 0.18.1'
 gem 'hotwire-rails', '~> 0.1.3'
 gem 'friendly_id', '~> 5.4', '>= 5.4.2'
+gem 'aws-sdk-s3', '~> 1.89'
+gem 'whenever', '~> 1.0'
