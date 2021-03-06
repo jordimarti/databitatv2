@@ -70,6 +70,8 @@ class EntsController < ApplicationController
     dades2 = resposta2.to_hash
     @image2_url = dades2['url']['url']['original']
     @image2_date = dades2['url']['date']
+
+    @last_photo = Photo.last
   end
 
   def timelapses
