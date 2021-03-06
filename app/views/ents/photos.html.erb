@@ -93,22 +93,23 @@
 
           <div class="divide-y divide-gray-200 lg:col-span-9 p-4">
             <h3>Point of view 1</h3>
-            <%= @last_photo.date %>
-            <%= image_tag @last_photo.image.variant(gravity: 'North', resize: '1920x1080^', crop: '1920x900+0+0') %>
+            <%= @last_photo1.date %>
+            <%= image_tag @last_photo1.image.variant(gravity: 'North', resize: '1920x1080^', crop: '1920x900+0+0') %>
 
             <br/>
             <h3>Point of view 2</h3>
-            <%= @image2_date %> 
-            <div class="cropped2">
-              <img src="<%= @image2_url %>">
-            </div>
+            <%= @last_photo2.date %>
+            <%= image_tag @last_photo2.image.variant(gravity: 'West', resize: '2844x1600^', crop: '1920x900+500+0') %>
 
             <br/>
             <h3>Point of view 3</h3>
-            <%= @image2_date %> 
-            <div class="cropped3">
-              <img src="<%= @image2_url %>">
-            </div>
+            <%= @last_photo2.date %>
+            <%= image_tag @last_photo2.image.variant(gravity: 'East', resize: '2844x1600^', crop: '1920x900+200+0') %>
+
+            <br/>
+            <h3>Point of view 4</h3>
+            <%= @last_photo2.date %>
+            <%= image_tag @last_photo2.image %>
 
           </div>
 
