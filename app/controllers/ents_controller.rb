@@ -60,8 +60,18 @@ class EntsController < ApplicationController
   def photos
     check_review(@ent.reviewid)
     
-    @last_photo1 = Photo.where(camera: 'vita_1').last
-    @last_photo2 = Photo.where(camera: 'vita_2').last
+    resposta = HTTParty.get("https://my.tikee.io/v2/photo_sets/b5c0711e-b6f1-4d91-aa2d-55db20b47eec/last_signed_url", headers: { 
+      "Accept" => "application/json" })
+    dades = resposta.to_hash
+    @image_url = dades['url']['url']['original']
+    @image_date = dades['url']['date']
+    resposta2 = HTTParty.get("https://my.tikee.io/v2/photo_sets/02a65610-6e86-4917-acd1-084415428d92/last_signed_url", headers: { 
+      "Accept" => "application/json" })
+    dades2 = resposta2.to_hash
+    @image2_url = dades2['url']['url']['original']
+    @image2_date = dades2['url']['date']
+
+    @last_photo = Photo.last
   end
 
   def timelapses
