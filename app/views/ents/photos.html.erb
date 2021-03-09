@@ -93,8 +93,10 @@
 
           <div class="divide-y divide-gray-200 lg:col-span-9 p-4">
             <h3>Point of view 1</h3>
-            <%= @last_photo.date %>
-            <%= image_tag @last_photo.image.variant(gravity: 'North', resize: '1920x1080^', crop: '1920x900+0+0') %>
+            <%= @image_date %>
+            <div class="cropped">
+              <img src="<%= @image_url %>">
+            </div>
 
             <br/>
             <h3>Point of view 2</h3>
