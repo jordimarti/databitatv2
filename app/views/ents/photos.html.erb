@@ -95,13 +95,7 @@
             
             <div>
               <div class="sm:hidden">
-                <label for="tabs" class="sr-only">Select a tab</label>
-                <select id="tabs" name="tabs" class="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
-                  <option selected>My Account</option>
-                  <option>Company</option>
-                  <option>Team Members</option>
-                  <option>Billing</option>
-                </select>
+                
               </div>
               <div class="hidden sm:block">
                 <nav class="relative z-0 rounded-lg shadow flex divide-x divide-gray-200" aria-label="Tabs">
@@ -164,8 +158,8 @@
                 <% @photos_vita_2.each do |photo| %>
                   <li class="col-span-1 flex shadow-sm rounded-md">
                     <div data-controller="lightbox">
-                      <a href="https://databitat.imgix.net/<%= photo.image.key %>?w=2000&h=1000&fp-x=0.1&fp-y=0.5&fp-z=2&fit=crop&crop=focalpoint">
-                        <img src="https://databitat.imgix.net/<%= photo.image.key %>?w=200&h=200&fp-x=0.1&fp-y=0.5&fp-z=2&fit=crop&crop=focalpoint">
+                      <a href="https://databitat.imgix.net/<%= photo.image.key %>?w=2000&h=1000">
+                        <img src="https://databitat.imgix.net/<%= photo.image.key %>?w=200&h=200&fit=crop">
                       </a>
                     </div>
                   </li>
@@ -180,8 +174,8 @@
                 <% @photos_vita_2.each do |photo| %>
                   <li class="col-span-1 flex shadow-sm rounded-md">
                     <div data-controller="lightbox">
-                      <a href="https://databitat.imgix.net/<%= photo.image.key %>?w=2000&h=1000&fp-x=0.9&fp-y=0.5&fp-z=2&fit=crop&crop=focalpoint">
-                        <img src="https://databitat.imgix.net/<%= photo.image.key %>?w=200&h=200&fp-x=0.9&fp-y=0.5&fp-z=2&fit=crop&crop=focalpoint">
+                      <a href="https://databitat.imgix.net/<%= photo.image.key %>?w=2000&h=1000&fp-x=0.3&fp-y=0.5&fp-z=1.5&fit=crop&crop=focalpoint">
+                        <img src="https://databitat.imgix.net/<%= photo.image.key %>?w=200&h=200&fp-x=0.3&fp-y=0.5&fp-z=1.5&fit=crop&crop=focalpoint">
                       </a>
                     </div>
                   </li>
@@ -196,13 +190,15 @@
                 <% @photos_vita_2.each do |photo| %>
                   <li class="col-span-1 flex shadow-sm rounded-md">
                     <div data-controller="lightbox">
-                      <a href="https://databitat.imgix.net/<%= photo.image.key %>?w=2000&h=1000">
-                        <img src="https://databitat.imgix.net/<%= photo.image.key %>?w=200&h=200&fit=crop">
+                      <a href="https://databitat.imgix.net/<%= photo.image.key %>?w=2000&h=1000&fp-x=0.9&fp-y=0.5&fp-z=2&fit=crop&crop=focalpoint">
+                        <img src="https://databitat.imgix.net/<%= photo.image.key %>?w=200&h=200&fp-x=0.9&fp-y=0.5&fp-z=2&fit=crop&crop=focalpoint">
                       </a>
                     </div>
                   </li>
                 <% end %>
               </ul>
+
+              
             <% end %>
           </div>
         </div>
