@@ -20,3 +20,11 @@ module Databitatv2
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
+Rails.application.configure do
+  config.imgix = {
+    source: "databitat.imgix.net",
+    use_https: true,
+    include_library_param: true
+  }
+end
