@@ -117,7 +117,9 @@
             <%= image_tag @last_photo.image %>
             <br/>
             ---
-            <%= ix_image_tag(@last_photo.image.key, url_params: { w: 800, h: 400, fit: 'crop' }) %>
+            <% @photos_vita_2.each do |photo| %>
+              <%= ix_image_tag(photo.image.key, url_params: { w: 900, h: 300, fit: 'crop' }) %>
+            <% end %>
 
           </div>
 

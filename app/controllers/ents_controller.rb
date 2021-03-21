@@ -72,6 +72,28 @@ class EntsController < ApplicationController
     @image2_date = dades2['url']['date']
 
     @last_photo = Photo.last
+
+    #@photos_0 = Photo.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)
+    #@photos_1 = Photo.where(created_at: 1.days.ago.to_date.beginning_of_day..1.days.ago.to_date.end_of_day)
+    #@photos_2 = Photo.where(created_at: 2.days.ago.to_date.beginning_of_day..2.days.ago.to_date.end_of_day)
+    #@photos_3 = Photo.where(created_at: 3.days.ago.to_date.beginning_of_day..3.days.ago.to_date.end_of_day)
+    #@photos_4 = Photo.where(created_at: 4.days.ago.to_date.beginning_of_day..4.days.ago.to_date.end_of_day)
+    #@photos_5 = Photo.where(created_at: 5.days.ago.to_date.beginning_of_day..5.days.ago.to_date.end_of_day)
+    #@photos_6 = Photo.where(created_at: 6.days.ago.to_date.beginning_of_day..6.days.ago.to_date.end_of_day)
+    #@photos_7 = Photo.where(created_at: 7.days.ago.to_date.beginning_of_day..7.days.ago.to_date.end_of_day)
+    #@photos_8 = Photo.where(created_at: 8.days.ago.to_date.beginning_of_day..8.days.ago.to_date.end_of_day)
+    #@photos_9 = Photo.where(created_at: 9.days.ago.to_date.beginning_of_day..9.days.ago.to_date.end_of_day)
+    #@photos_10 = Photo.where(created_at: 10.days.ago.to_date.beginning_of_day..10.days.ago.to_date.end_of_day)
+    
+    if params.has_key?(:date)
+      date = Date.parse(params[:date])
+    else
+      date = Date.today
+    end
+    @photos_vita_1 = Photo.where(created_at: date.beginning_of_day..date.end_of_day, camera: "vita_1")
+    @photos_vita_2 = Photo.where(created_at: date.beginning_of_day..date.end_of_day, camera: "vita_2")
+
+    @last_10_days = (10.days.ago.to_date..Date.today).map{ |date| date.strftime("%F") }
   end
 
   def timelapses
