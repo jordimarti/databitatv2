@@ -117,12 +117,29 @@
             <%= image_tag @last_photo.image %>
             <br/>
             ---
-            <% @photos_vita_2.each do |photo| %>
-              <%= ix_image_tag(photo.image.key, url_params: { w: 900, h: 300, fit: 'crop' }) %>
-            <% end %>
+            <div data-controller="lightbox">
+              <ul class="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <% @photos_vita_1.each do |photo| %>
+                  <li class="col-span-1 flex shadow-sm rounded-md">
+                    <%= image_tag photo.image %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
 
+
+            <div data-controller="lightbox">
+              <ul class="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <% @photos_vita_1.each do |photo| %>
+                  <li class="col-span-1 flex shadow-sm rounded-md">
+                    <a href="https://databitat.imgix.net/<%= photo.image.key %>?w=1000&h=600&fp-x=0.5&fp-y=0.2&fp-z=2&fit=crop&crop=focalpoint">
+                      <%= ix_image_tag(photo.image.key, url_params: { w: 200, h: 200, fp_x: 0.5, fp_y: 0.2, fp_z: 2, fit: 'crop', crop: 'focalpoint' }) %>
+                    </a>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
           </div>
-
         </div>
       </div>
     </div>
