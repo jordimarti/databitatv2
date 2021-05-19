@@ -129,6 +129,56 @@
                     <% i += 1 %>
                   <% end %>
                 </nav>
+                
+                <div data-controller="hello" class="mt-4">
+                  <% 
+                    if params.has_key?(:date)
+                      date = Date.parse(params[:date])
+                    else
+                      date = Date.yesterday
+                    end
+                    selected_day = date.day
+                    selected_month = date.month
+                    selected_year = date.year
+                  %>
+                  <label for="day">Day:</label>
+                  <select name="day" id="day" data-hello-target="day">
+                    <% for i in 1..31 %>
+                      <% if i == selected_day %>
+                        <option value="<%= i %>" selected><%= i %></option>
+                      <% else %>
+                        <option value="<%= i %>"><%= i %></option>
+                      <% end %>
+                    <% end %>
+                  </select>
+                  <label for="month">Month:</label>
+                  <select name="month" id="month" data-hello-target="month">
+                    <% for i in 1..12 %>
+                      <% if i == selected_month %>
+                        <option value="<%= i %>" selected><%= i %></option>
+                      <% else %>
+                        <option value="<%= i %>"><%= i %></option>
+                      <% end %>
+                    <% end %>
+                  </select>
+                  <label for="year">Year:</label>
+                  <select name="year" id="year" data-hello-target="year">
+                    <% if selected_year == 2021 %>
+                      <option value="2021">2021</option>
+                    <% else %>
+                      <option value="2022">2022</option>
+                    <% end %>
+                  </select>
+                  <input type="hidden" value="<%= @ent.id %>" data-hello-target="entid">
+                  <input type="hidden" value="<%= @ent.reviewid %>" data-hello-target="reviewid">
+                  <button data-action="click->hello#new_date" class="ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">Search date</button>
+
+                  <span data-hello-target="output"></span>
+
+                  
+
+
+                </div>
               </div>
             </div>
 
